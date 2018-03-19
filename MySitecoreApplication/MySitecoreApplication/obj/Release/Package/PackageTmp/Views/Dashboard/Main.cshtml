@@ -1,0 +1,9 @@
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<MySitecoreApplication.UserDefined.HomeData.IHomeData>
+<div>
+    <h1>I'm there , Ashish is here</h1>
+    @if (Model != null)
+    {
+        <div class="content">@Editable(Model, y => y._FirstName)</div>
+    }
+</div>
+
