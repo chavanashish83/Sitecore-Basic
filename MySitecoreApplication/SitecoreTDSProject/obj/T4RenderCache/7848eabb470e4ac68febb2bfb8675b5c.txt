@@ -1,0 +1,141 @@
+//Revision: 93594166-7781-4236-bf3a-f0b6987db0b5
+
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.UserDefined.CustomerData
+{
+
+
+    /// <summary>
+    /// ICustomerData Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/CustomerData</para>
+    /// <para>ID: 7848eabb-470e-4ac6-8feb-b2bfb8675b5c</para>
+    /// </summary>
+    [SitecoreType(TemplateId=ICustomerDataConstants.TemplateIdString )] //, Cachable = true
+    public partial interface ICustomerData : IGlassBase 
+    {
+                                /// <summary>
+                    /// The _address field.
+                    /// <para></para>
+                    /// <para>Field Type: Multi-Line Text</para>
+                    /// <para>Field ID: 971b8cb4-97b5-427a-862d-5545a07eb0e5</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ICustomerDataConstants._AddressFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    string _Address  {get; set;}
+            
+                                /// <summary>
+                    /// The _FirstName field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>
+                    /// <para>Field ID: f6bdb38e-6d5e-4a5f-9664-be11535ded52</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ICustomerDataConstants._FirstNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    string _FirstName  {get; set;}
+            
+                                /// <summary>
+                    /// The _LastName field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>
+                    /// <para>Field ID: c887bba1-a20e-4f58-b406-04dec9927f5f</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ICustomerDataConstants._LastNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    string _LastName  {get; set;}
+            
+                }
+
+
+    public static partial class ICustomerDataConstants{
+            public const string TemplateIdString = "7848eabb-470e-4ac6-8feb-b2bfb8675b5c";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "CustomerData";
+
+                    
+            public static readonly ID _AddressFieldId = new ID("971b8cb4-97b5-427a-862d-5545a07eb0e5");
+            public const string _AddressFieldName = "_address";
+                    
+            public static readonly ID _FirstNameFieldId = new ID("f6bdb38e-6d5e-4a5f-9664-be11535ded52");
+            public const string _FirstNameFieldName = "_FirstName";
+                    
+            public static readonly ID _LastNameFieldId = new ID("c887bba1-a20e-4f58-b406-04dec9927f5f");
+            public const string _LastNameFieldName = "_LastName";
+            }
+
+	
+    /// <summary>
+    /// CustomerData
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/CustomerData</para>
+    /// <para>ID: 7848eabb-470e-4ac6-8feb-b2bfb8675b5c</para>
+    /// </summary>
+    [SitecoreType(TemplateId=ICustomerDataConstants.TemplateIdString)] //, Cachable = true
+    public partial class CustomerDataEntity  : GlassBase, ICustomerData 
+    {
+                        /// <summary>
+                /// The _address field.
+                /// <para></para>
+                /// <para>Field Type: Multi-Line Text</para>
+                /// <para>Field ID: 971b8cb4-97b5-427a-862d-5545a07eb0e5</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("_address")]
+                [SitecoreField(ICustomerDataConstants._AddressFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string _Address  {get; set;}
+				//BUPA
+				public HtmlString _AddressField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "_address", renderParameter ));
+				}
+                        /// <summary>
+                /// The _FirstName field.
+                /// <para></para>
+                /// <para>Field Type: Single-Line Text</para>
+                /// <para>Field ID: f6bdb38e-6d5e-4a5f-9664-be11535ded52</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("_firstname")]
+                [SitecoreField(ICustomerDataConstants._FirstNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string _FirstName  {get; set;}
+				//BUPA
+				public HtmlString _FirstNameField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "_FirstName", renderParameter ));
+				}
+                        /// <summary>
+                /// The _LastName field.
+                /// <para></para>
+                /// <para>Field Type: Single-Line Text</para>
+                /// <para>Field ID: c887bba1-a20e-4f58-b406-04dec9927f5f</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("_lastname")]
+                [SitecoreField(ICustomerDataConstants._LastNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string _LastName  {get; set;}
+				//BUPA
+				public HtmlString _LastNameField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "_LastName", renderParameter ));
+				}
+            }
+}

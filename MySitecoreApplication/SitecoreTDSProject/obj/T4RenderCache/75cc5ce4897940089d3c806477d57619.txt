@@ -1,0 +1,31 @@
+//Revision: 3c8189e0-1827-4328-99f6-06a15ceb9978
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.Constants
+{
+    public static partial class Entities{
+       public static partial class Layout{
+         /// <summary>
+         /// Layouts Item
+         /// <para>レイアウト</para>
+         /// <para>Path: /sitecore/layout/Layouts</para>
+         /// <para>ID: 75cc5ce4-8979-4008-9d3c-806477d57619</para>
+         /// </summary>
+         public static partial class Layouts{
+             public const string ID = "75cc5ce4-8979-4008-9d3c-806477d57619";
+             public const string Name = "Layouts";
+             public const string Path = "/sitecore/layout/Layouts";
+             public static global::Sitecore.Data.ID ItemID { get { return new global::Sitecore.Data.ID(ID); } }
+         
+             public static global::Sitecore.Data.ID TemplateID { get { return  new global::Sitecore.Data.ID("239f9cf4-e5a0-44e0-b342-0f32cd4c6d8b"); } }
+             public const string TemplateName = "Node";
+         }
+       }
+    }
+}

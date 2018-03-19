@@ -1,0 +1,9 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<MySitecoreApplication.UserDefined.FooterData.IFooterData>
+<div>
+    <h1>Footer</h1>
+    @if (Model != null)
+    {
+        <div class="content">@Editable(Model, y => y.FooterName)</div>
+    }
+</div>
+

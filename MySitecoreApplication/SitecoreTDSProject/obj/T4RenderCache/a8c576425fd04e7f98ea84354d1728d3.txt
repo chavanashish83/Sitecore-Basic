@@ -1,0 +1,77 @@
+//Revision: df1945cf-0176-4cf9-88ff-a129e232d4b6
+
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.UserDefined.FooterData
+{
+
+
+    /// <summary>
+    /// IFooterData Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/FooterData</para>
+    /// <para>ID: a8c57642-5fd0-4e7f-98ea-84354d1728d3</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IFooterDataConstants.TemplateIdString )] //, Cachable = true
+    public partial interface IFooterData : IGlassBase 
+    {
+                                /// <summary>
+                    /// The footerName field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>
+                    /// <para>Field ID: 8698f7d2-1a2b-4758-926e-a27b579a8f70</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(IFooterDataConstants.FooterNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    string FooterName  {get; set;}
+            
+                }
+
+
+    public static partial class IFooterDataConstants{
+            public const string TemplateIdString = "a8c57642-5fd0-4e7f-98ea-84354d1728d3";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "FooterData";
+
+                    
+            public static readonly ID FooterNameFieldId = new ID("8698f7d2-1a2b-4758-926e-a27b579a8f70");
+            public const string FooterNameFieldName = "footerName";
+            }
+
+	
+    /// <summary>
+    /// FooterData
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/FooterData</para>
+    /// <para>ID: a8c57642-5fd0-4e7f-98ea-84354d1728d3</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IFooterDataConstants.TemplateIdString)] //, Cachable = true
+    public partial class FooterDataEntity  : GlassBase, IFooterData 
+    {
+                        /// <summary>
+                /// The footerName field.
+                /// <para></para>
+                /// <para>Field Type: Single-Line Text</para>
+                /// <para>Field ID: 8698f7d2-1a2b-4758-926e-a27b579a8f70</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("footername")]
+                [SitecoreField(IFooterDataConstants.FooterNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string FooterName  {get; set;}
+				//BUPA
+				public HtmlString FooterNameField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "footerName", renderParameter ));
+				}
+            }
+}

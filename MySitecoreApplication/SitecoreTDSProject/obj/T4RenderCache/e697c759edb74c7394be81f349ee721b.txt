@@ -1,0 +1,111 @@
+//Revision: 54f165bf-5f29-4a49-b671-74e3f46fe1c1
+
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.UserDefined.HomePage
+{
+
+
+    /// <summary>
+    /// IHomePage Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/HomePage</para>
+    /// <para>ID: e697c759-edb7-4c73-94be-81f349ee721b</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IHomePageConstants.TemplateIdString )] //, Cachable = true
+    public partial interface IHomePage : IGlassBase , global::MySitecoreApplication.UserDefined.HomeData.IHomeData
+    {
+                }
+
+
+    public static partial class IHomePageConstants{
+            public const string TemplateIdString = "e697c759-edb7-4c73-94be-81f349ee721b";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "HomePage";
+
+                    
+            public static readonly ID _FirstNameFieldId = new ID("e567acb3-a804-4bd7-ba86-d8ccccc2bb7b");
+            public const string _FirstNameFieldName = "_firstName";
+                    
+            public static readonly ID _HomeUrlFieldId = new ID("24b4df95-60d7-4224-9b8e-c0b432eabf3a");
+            public const string _HomeUrlFieldName = "_homeUrl";
+                    
+            public static readonly ID _LastNameFieldId = new ID("c4f1cb9d-8e10-47f0-87a0-c428267c01d1");
+            public const string _LastNameFieldName = "_lastName";
+            }
+
+	
+    /// <summary>
+    /// HomePage
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/HomePage</para>
+    /// <para>ID: e697c759-edb7-4c73-94be-81f349ee721b</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IHomePageConstants.TemplateIdString)] //, Cachable = true
+    public partial class HomePageEntity  : GlassBase, IHomePage 
+    {
+                        /// <summary>
+                /// The _firstName field.
+                /// <para></para>
+                /// <para>Field Type: Single-Line Text</para>
+                /// <para>Field ID: e567acb3-a804-4bd7-ba86-d8ccccc2bb7b</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("_firstname")]
+                [SitecoreField(IHomePageConstants._FirstNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string _FirstName  {get; set;}
+				//BUPA
+				public HtmlString _FirstNameField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "_firstName", renderParameter ));
+				}
+                        /// <summary>
+                /// The _homeUrl field.
+                /// <para></para>
+                /// <para>Field Type: General Link</para>
+                /// <para>Field ID: 24b4df95-60d7-4224-9b8e-c0b432eabf3a</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("_homeurl")]
+                [SitecoreField(IHomePageConstants._HomeUrlFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual Glass.Mapper.Sc.Fields.Link _HomeUrl  {get; set;}
+				//BUPA
+				public HtmlString _HomeUrlField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "_homeUrl", renderParameter ));
+				}
+                        /// <summary>
+                /// The _lastName field.
+                /// <para></para>
+                /// <para>Field Type: Single-Line Text</para>
+                /// <para>Field ID: c4f1cb9d-8e10-47f0-87a0-c428267c01d1</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("_lastname")]
+                [SitecoreField(IHomePageConstants._LastNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string _LastName  {get; set;}
+				//BUPA
+				public HtmlString _LastNameField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "_lastName", renderParameter ));
+				}
+            }
+}

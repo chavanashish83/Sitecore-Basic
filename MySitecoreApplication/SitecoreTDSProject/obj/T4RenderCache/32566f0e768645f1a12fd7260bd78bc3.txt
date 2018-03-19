@@ -1,0 +1,31 @@
+//Revision: d0d94ebe-a3eb-4ff6-bc78-38a2d84c1930
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.Constants
+{
+    public static partial class Entities{
+       public static partial class Layout{
+         /// <summary>
+         /// Renderings Item
+         /// <para>レンダリング</para>
+         /// <para>Path: /sitecore/layout/Renderings</para>
+         /// <para>ID: 32566f0e-7686-45f1-a12f-d7260bd78bc3</para>
+         /// </summary>
+         public static partial class Renderings{
+             public const string ID = "32566f0e-7686-45f1-a12f-d7260bd78bc3";
+             public const string Name = "Renderings";
+             public const string Path = "/sitecore/layout/Renderings";
+             public static global::Sitecore.Data.ID ItemID { get { return new global::Sitecore.Data.ID(ID); } }
+         
+             public static global::Sitecore.Data.ID TemplateID { get { return  new global::Sitecore.Data.ID("239f9cf4-e5a0-44e0-b342-0f32cd4c6d8b"); } }
+             public const string TemplateName = "Node";
+         }
+       }
+    }
+}

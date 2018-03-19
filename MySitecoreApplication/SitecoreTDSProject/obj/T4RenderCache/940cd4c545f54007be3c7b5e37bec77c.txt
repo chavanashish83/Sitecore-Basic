@@ -1,0 +1,77 @@
+//Revision: 006c1036-f365-4101-9954-a062fa30330d
+
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.UserDefined.HeaderData
+{
+
+
+    /// <summary>
+    /// IHeaderData Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/HeaderData</para>
+    /// <para>ID: 940cd4c5-45f5-4007-be3c-7b5e37bec77c</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IHeaderDataConstants.TemplateIdString )] //, Cachable = true
+    public partial interface IHeaderData : IGlassBase 
+    {
+                                /// <summary>
+                    /// The headerName field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>
+                    /// <para>Field ID: d853e051-b808-48bd-ad0f-2fa568e5ed86</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(IHeaderDataConstants.HeaderNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    string HeaderName  {get; set;}
+            
+                }
+
+
+    public static partial class IHeaderDataConstants{
+            public const string TemplateIdString = "940cd4c5-45f5-4007-be3c-7b5e37bec77c";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "HeaderData";
+
+                    
+            public static readonly ID HeaderNameFieldId = new ID("d853e051-b808-48bd-ad0f-2fa568e5ed86");
+            public const string HeaderNameFieldName = "headerName";
+            }
+
+	
+    /// <summary>
+    /// HeaderData
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/HeaderData</para>
+    /// <para>ID: 940cd4c5-45f5-4007-be3c-7b5e37bec77c</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IHeaderDataConstants.TemplateIdString)] //, Cachable = true
+    public partial class HeaderDataEntity  : GlassBase, IHeaderData 
+    {
+                        /// <summary>
+                /// The headerName field.
+                /// <para></para>
+                /// <para>Field Type: Single-Line Text</para>
+                /// <para>Field ID: d853e051-b808-48bd-ad0f-2fa568e5ed86</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("headername")]
+                [SitecoreField(IHeaderDataConstants.HeaderNameFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string HeaderName  {get; set;}
+				//BUPA
+				public HtmlString HeaderNameField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "headerName", renderParameter ));
+				}
+            }
+}

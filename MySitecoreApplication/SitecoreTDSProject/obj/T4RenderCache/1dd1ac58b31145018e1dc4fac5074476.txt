@@ -1,0 +1,141 @@
+//Revision: bcbbdc21-81e8-44de-9168-2b3661b1c53b
+
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.UserDefined.DogData
+{
+
+
+    /// <summary>
+    /// IDogData Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/DogData</para>
+    /// <para>ID: 1dd1ac58-b311-4501-8e1d-c4fac5074476</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IDogDataConstants.TemplateIdString )] //, Cachable = true
+    public partial interface IDogData : IGlassBase 
+    {
+                                /// <summary>
+                    /// The Description field.
+                    /// <para></para>
+                    /// <para>Field Type: Multi-Line Text</para>
+                    /// <para>Field ID: 734023b1-6d10-4686-91da-985380f81a2d</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(IDogDataConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    string Description  {get; set;}
+            
+                                /// <summary>
+                    /// The Image field.
+                    /// <para></para>
+                    /// <para>Field Type: Image</para>
+                    /// <para>Field ID: 3f864b2a-215e-4833-8869-557b1aa1d557</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(IDogDataConstants.ImageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    Glass.Mapper.Sc.Fields.Image Image  {get; set;}
+            
+                                /// <summary>
+                    /// The Title field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>
+                    /// <para>Field ID: 5aab67ca-9f7a-491e-972e-d29cb3b58ed2</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(IDogDataConstants.TitleFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                    string Title  {get; set;}
+            
+                }
+
+
+    public static partial class IDogDataConstants{
+            public const string TemplateIdString = "1dd1ac58-b311-4501-8e1d-c4fac5074476";
+            public static readonly ID TemplateId = new ID(TemplateIdString);
+            public const string TemplateName = "DogData";
+
+                    
+            public static readonly ID DescriptionFieldId = new ID("734023b1-6d10-4686-91da-985380f81a2d");
+            public const string DescriptionFieldName = "Description";
+                    
+            public static readonly ID ImageFieldId = new ID("3f864b2a-215e-4833-8869-557b1aa1d557");
+            public const string ImageFieldName = "Image";
+                    
+            public static readonly ID TitleFieldId = new ID("5aab67ca-9f7a-491e-972e-d29cb3b58ed2");
+            public const string TitleFieldName = "Title";
+            }
+
+	
+    /// <summary>
+    /// DogData
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/DogData</para>
+    /// <para>ID: 1dd1ac58-b311-4501-8e1d-c4fac5074476</para>
+    /// </summary>
+    [SitecoreType(TemplateId=IDogDataConstants.TemplateIdString)] //, Cachable = true
+    public partial class DogDataEntity  : GlassBase, IDogData 
+    {
+                        /// <summary>
+                /// The Description field.
+                /// <para></para>
+                /// <para>Field Type: Multi-Line Text</para>
+                /// <para>Field ID: 734023b1-6d10-4686-91da-985380f81a2d</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("description")]
+                [SitecoreField(IDogDataConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string Description  {get; set;}
+				//BUPA
+				public HtmlString DescriptionField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "Description", renderParameter ));
+				}
+                        /// <summary>
+                /// The Image field.
+                /// <para></para>
+                /// <para>Field Type: Image</para>
+                /// <para>Field ID: 3f864b2a-215e-4833-8869-557b1aa1d557</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("image")]
+                [SitecoreField(IDogDataConstants.ImageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual Glass.Mapper.Sc.Fields.Image Image  {get; set;}
+				//BUPA
+				public HtmlString ImageField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "Image", renderParameter ));
+				}
+                        /// <summary>
+                /// The Title field.
+                /// <para></para>
+                /// <para>Field Type: Single-Line Text</para>
+                /// <para>Field ID: 5aab67ca-9f7a-491e-972e-d29cb3b58ed2</para>
+                /// <para>Custom Data: </para>
+                /// </summary>
+                [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+                [IndexField("title")]
+                [SitecoreField(IDogDataConstants.TitleFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+                public virtual string Title  {get; set;}
+				//BUPA
+				public HtmlString TitleField(bool isEditable = true, string parameters = "")
+				{ 
+					string renderParameter = GenerateRenderParameter(isEditable, parameters);
+
+					return new HtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(
+						Sitecore.Context.Database.GetItem(this.EntityId.ToString()), "Title", renderParameter ));
+				}
+            }
+}

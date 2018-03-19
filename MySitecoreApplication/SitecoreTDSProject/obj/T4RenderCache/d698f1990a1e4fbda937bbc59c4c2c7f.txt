@@ -1,0 +1,31 @@
+//Revision: 9445405e-b4c1-4d9f-b530-e7353579fff6
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.Constants
+{
+    public static partial class Entities{
+       public static partial class Content{
+         /// <summary>
+         /// Dashboard Item
+         /// <para></para>
+         /// <para>Path: /sitecore/content/Dashboard</para>
+         /// <para>ID: d698f199-0a1e-4fbd-a937-bbc59c4c2c7f</para>
+         /// </summary>
+         public static partial class Dashboard{
+             public const string ID = "d698f199-0a1e-4fbd-a937-bbc59c4c2c7f";
+             public const string Name = "Dashboard";
+             public const string Path = "/sitecore/content/Dashboard";
+             public static global::Sitecore.Data.ID ItemID { get { return new global::Sitecore.Data.ID(ID); } }
+         
+             public static global::Sitecore.Data.ID TemplateID { get { return  new global::Sitecore.Data.ID("e697c759-edb7-4c73-94be-81f349ee721b"); } }
+             public const string TemplateName = "HomePage";
+         }
+       }
+    }
+}

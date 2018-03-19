@@ -1,0 +1,33 @@
+//Revision: 3e9b471d-7ec4-4f59-8de2-5d7ff9b3d763
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.Constants
+{
+    public static partial class Entities{
+       public static partial class Layout{
+          public static partial class Layouts{
+            /// <summary>
+            /// MasterLayout Item
+            /// <para></para>
+            /// <para>Path: /sitecore/layout/Layouts/MasterLayout</para>
+            /// <para>ID: 0d51d8c2-46b9-443b-b886-f293c294d8a6</para>
+            /// </summary>
+            public static partial class MasterLayout{
+                public const string ID = "0d51d8c2-46b9-443b-b886-f293c294d8a6";
+                public const string Name = "MasterLayout";
+                public const string Path = "/sitecore/layout/Layouts/MasterLayout";
+                public static global::Sitecore.Data.ID ItemID { get { return new global::Sitecore.Data.ID(ID); } }
+            
+                public static global::Sitecore.Data.ID TemplateID { get { return  new global::Sitecore.Data.ID("3a45a723-64ee-4919-9d41-02fd40fd1466"); } }
+                public const string TemplateName = "Layout";
+            }
+          }
+       }
+    }
+}

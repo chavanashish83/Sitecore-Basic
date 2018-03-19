@@ -1,0 +1,31 @@
+//Revision: e7778502-8a6f-4dc6-a32c-a0fd8d01cca1
+
+
+
+
+
+
+
+
+namespace MySitecoreApplication.Constants
+{
+    public static partial class Entities{
+       public static partial class Content{
+         /// <summary>
+         /// Global Data Item
+         /// <para></para>
+         /// <para>Path: /sitecore/content/Global Data</para>
+         /// <para>ID: c172593e-f42d-4f7d-b5fa-91c9b11121eb</para>
+         /// </summary>
+         public static partial class GlobalData{
+             public const string ID = "c172593e-f42d-4f7d-b5fa-91c9b11121eb";
+             public const string Name = "Global Data";
+             public const string Path = "/sitecore/content/Global Data";
+             public static global::Sitecore.Data.ID ItemID { get { return new global::Sitecore.Data.ID(ID); } }
+         
+             public static global::Sitecore.Data.ID TemplateID { get { return  new global::Sitecore.Data.ID("a87a00b1-e6db-45ab-8b54-636fec3b5523"); } }
+             public const string TemplateName = "Folder";
+         }
+       }
+    }
+}
